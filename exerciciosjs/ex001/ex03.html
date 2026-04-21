@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturalidade</title>
+</head>
+<body>
+    <h1>Qual seu Pais</h1>
+  Digita o seu país <input type="text" name="pais" id="pais">
+   <input type="button" value="Busca" onclick="pais()">
+   <div id="pis">
+
+
+   </div>
+
+   <script>
+    function pais(){
+     var coy = window.document.querySelector ('input#pais')  
+     var pis =window.document.querySelector ('div#pis')
+      var vel = coy.value
+    if(vel.toLowerCase() == "brasil"){
+    pis.innerHTML = `<p> Você é Brasileiro BR</p>`
+    }
+    else{
+        pis.innerHTML = `<p>Você é Estrangeiro </p>`
+    }
+     
+    }
+   </script>
+</body>
+</html>
