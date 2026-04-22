@@ -6,7 +6,7 @@
     <title>hora</title>
     <style>
         body{
-            background-color: darkgray;
+           
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         box-sizing: border-box;
         text-align: center;
@@ -18,20 +18,24 @@
            border-radius: 20px;
            margin: auto;
            text-align: center;
-            background-color: aquamarine;
-           
+            background-color: white;
+         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.418);
         }
-        img.foto{
-            display: flex;
-            width: 250px;
+        img#foto{
+         
+            width: 300px;
            aspect-ratio: 1/1;
           object-fit: cover;
           overflow: hidden;
           margin: auto;  
-          margin-top: 80px;
+         
       justify-content: center;
      align-items: center;
           border-radius: 50% ;
+        }
+        .mensagem{
+            font-size: 3em;
+
         }
     </style>
 </head>
@@ -39,13 +43,37 @@
    <header><h1>Hora do Dia</h1></header>
    <main>
     <article>
-        <img class="foto" src="imagens/foto-dia-01 (1).webp" alt="dia">
+      <h2 id="mensagem"></h2>
+        <img id="foto" src="" alt="imagem do periodo do dia">
     
     </article>
    </main>
    <script>
+    const hora = new Date(). getHours();
+    let periodo = "";
+    let corFundo = "";
+
+    let imagem ="";
+    periodo = "da Manhã"
+    if(hora >= 6 && hora < 11 ){
+     corFundo = "#dbeafe";
+    imagem = "imagens/foto-dia-01 (1).webp"
+    }
+    else if (hora >= 12 && hora <18){
+        periodo = "da Tarde "
+        imagem ="imagens/foto-tarde-02.webp"
+        corFundo = `#fef3c7`
+    }
+    else if(hora >= 19 && hora <24){
+        periodo = "da Noite"
+        imagem = "imagens/foto-noite-04.webp"
+        corFundo = `#1e2936`
+    }
+    document.body.style.backgroundColor = corFundo
+    document.getElementById("mensagem").innerText = `Agora são ${hora} horas ${periodo}`
+    document.getElementById("foto").src = imagem;
 
    </script>
-
+ 
 </body>
 </html>
