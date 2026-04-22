@@ -35,7 +35,6 @@
         }
         .mensagem{
             font-size: 3em;
-
         }
     </style>
 </head>
@@ -49,13 +48,13 @@
     </article>
    </main>
    <script>
-    const hora = new Date(). getHours();
+    const hora =  new Date(). getHours();;
     let periodo = "";
     let corFundo = "";
 
     let imagem ="";
     periodo = "da Manhã"
-    if(hora >= 6 && hora < 11 ){
+    if(hora >= 6 && hora < 12 ){
      corFundo = "#dbeafe";
     imagem = "imagens/foto-dia-01 (1).webp"
     }
@@ -68,6 +67,11 @@
         periodo = "da Noite"
         imagem = "imagens/foto-noite-04.webp"
         corFundo = `#1e2936`
+    }
+    else {
+        periodo = "da madrugada"
+        imagem = "imagens/foto-04-madrugada.webp"
+        corFundo = `#020617`
     }
     document.body.style.backgroundColor = corFundo
     document.getElementById("mensagem").innerText = `Agora são ${hora} horas ${periodo}`
