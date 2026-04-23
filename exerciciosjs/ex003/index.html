@@ -23,7 +23,7 @@
             border-radius: 20px;
             margin: auto;
             text-align: left;
-            width: 600px;
+            width: 450px;
             height:500px ;
         }
         main h2{
@@ -31,7 +31,7 @@
         }
         
         img{
-            display: block;
+            display: none;
             overflow: hidden;
             width: 280px;
             height: 280px;
@@ -81,21 +81,44 @@
 
             if(sexo[0].checked){
               genero = "Homem"  
-              foto.src ="images/homem.webp"
+              if (idade < 12){
+                foto.src ="images/crianca homem.webp"
+              }
+              else if (idade < 18){
+                foto.src="images/adolescente- homem.webp"
+              }
+              else if (idade < 60){
+                foto.src="images/homem.webp"
+              }
+              else{
+                foto.src="images/idoso.webp"
+              }
             }
             else if (sexo[1].checked){
                genero = "Mulher"
-               foto.src = "images/mulher.webp"
+              if (idade < 12){
+                foto.src="images/criança-mulher.webp"
+              }
+              else if(idade <18){
+                foto.src="images/adolescente- mulher.webp"
+              }
+              else if(idade <60){
+                foto.src="images/mulher.webp"
+              }
+              else{
+                foto.src="images/idosa.webp"
+              }
             } else{
                 res.innerHTML ="Selecione o sexo"
-                foto.src = ""
+                foto.style.display ="none"
                 return
             }
+            foto.style.display ="block"
             res.innerHTML = `Você é ${genero} e tem ${idade} anos`
 
         }
 
     </script>
-   
+  
 </body>
 </html>
