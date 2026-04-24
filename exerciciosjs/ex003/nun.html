@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contar</title>
+    <style>
+        main{
+            width: 300px;
+            height: 250px;
+           
+        }
+        main > div#contar {
+          padding-bottom: 20px;
+        }
+        input{
+            width: 80px;
+            padding: 5px;
+         margin: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header><h1>Vamos contar</h1></header>
+    <main>
+       <div id="contar">
+        <label for="incio">Inicio:</label> <input type="number" name="inicio" id="inicio"> <br>
+      <label for="fim"> Fim: </label>  <input type="number" name="fim" id="fim"> <br>
+      <label for="pass">Passo: </label><input type="number" name="passo" id="passo"> <br>
+       
+       </div>
+      
+      
+         <button onclick="contar()">Contar</button>
+       
+
+       <div id="res">Preparando contagem...</div>
+
+    <script>
+        function contar(){
+     let num = Number(document.getElementById("inicio").value)
+     let fim = Number(document.getElementById("fim").value)
+     let passo = Number(document.getElementById("passo").value)
+     let res = document.getElementById("res")
+
+      if(passo <= 0){
+        alert("Passo inválido! considerando passa = 1")
+        passo = 1
+      }
+      res.innerHTML = "contando: <br>"
+
+        if (inicio < fim) {
+        // crescente
+        for (let i = inicio; i <= fim; i += passo) {
+            res.innerHTML += `${i} 👉 `
+        }
+    } else {
+        // decrescente
+        for (let i = inicio; i >= fim; i -= passo) {
+            res.innerHTML += `${i} 👉 `
+        }
+    }
+
+    res.innerHTML += "🏁"
+}
+
+    </script>
+
+    </main>
+</body>
+</html>
