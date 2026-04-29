@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 90vw;
+    height: 90vh;
+    background-color: aqua;
+}
+header{
+    text-align: center;
+}
+main{
+background-color: white;
+border-radius: 20px;
+padding: 20px;
+margin: auto;
+text-align: left;
+}
